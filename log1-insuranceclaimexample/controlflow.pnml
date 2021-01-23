@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pnml>
+	<net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+		<name>
+			<text>Petrinet</text>
+		</name>
+		<page id="n0">
+			<name>
+				<text/>
+			</name>
+			<place id="n1">
+				<name>
+					<text>([Evaluate claim],[Send rejection letter, Send approval letter])</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="2de18950-ba8c-4dd5-8efa-71e7ecb8f3bc"/>
+				<graphics>
+					<position x="268.75" y="103.0"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="n2">
+				<name>
+					<text>([Evaluate claim],[Send rejection letter, Issue payment])</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="a6ecf3b2-bf1c-405b-9b11-d91607e4932e"/>
+				<graphics>
+					<position x="268.75" y="76.0"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="n3">
+				<name>
+					<text>([Send rejection letter, Send approval letter],[Archive claim])</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="cdd4d872-1fe0-4f3e-a49a-0b61c1918507"/>
+				<graphics>
+					<position x="356.25" y="103.0"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="n4">
+				<name>
+					<text>([Register Claim],[Check policy only, Check all])</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="8e90a8bc-c15c-4bf2-bef4-ae8fbd2f86ff"/>
+				<graphics>
+					<position x="93.75" y="92.5"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="n5">
+				<name>
+					<text>([Check policy only, Check all],[Evaluate claim])</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="11813fb3-da67-47b1-b46c-7f090da9b77c"/>
+				<graphics>
+					<position x="181.25" y="92.0"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="n6">
+				<name>
+					<text>([Send rejection letter, Issue payment],[Archive claim])</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="051e58ae-1821-4b5b-b574-37523c1f1707"/>
+				<graphics>
+					<position x="356.25" y="76.0"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="n7">
+				<name>
+					<text>Start</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="fdb04b4c-cdc4-47d4-9d11-f2b1043504cf"/>
+				<graphics>
+					<position x="6.25" y="91.5"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+				<initialMarking>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="n8">
+				<name>
+					<text>End</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="1b3022d9-6b54-4e18-9ffd-26208749b39e"/>
+				<graphics>
+					<position x="443.75" y="89.0"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<transition id="n9">
+				<name>
+					<text>Archive claim</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="Archive claim" localNodeID="832112e1-759e-40d4-b24b-4a05d65ffa2d"/>
+				<graphics>
+					<position x="400.0" y="89.0"/>
+					<dimension x="25.0" y="20.0"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="n10">
+				<name>
+					<text>Check all</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="Check all" localNodeID="edbd4159-d112-4056-8687-c14d27dd87bf"/>
+				<graphics>
+					<position x="137.5" y="111.0"/>
+					<dimension x="25.0" y="20.0"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="n11">
+				<name>
+					<text>Check policy only</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="Check policy only" localNodeID="f9e428a2-e66b-45e5-bcfc-eb327df215e3"/>
+				<graphics>
+					<position x="137.5" y="76.0"/>
+					<dimension x="25.0" y="20.0"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="n12">
+				<name>
+					<text>Evaluate claim</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="Evaluate claim" localNodeID="52880b01-9887-4428-9fd3-5738ee6e9e1f"/>
+				<graphics>
+					<position x="225.0" y="90.0"/>
+					<dimension x="25.0" y="20.0"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="n13">
+				<name>
+					<text>Issue payment</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="Issue payment" localNodeID="5e95d8b5-d4c9-4cf8-842c-335e6d8ab6ea"/>
+				<graphics>
+					<position x="312.5" y="53.0"/>
+					<dimension x="25.0" y="20.0"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="n14">
+				<name>
+					<text>Register Claim</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="Register Claim" localNodeID="18af7b00-ff64-4ebc-970f-59d438f59a47"/>
+				<graphics>
+					<position x="50.0" y="91.5"/>
+					<dimension x="25.0" y="20.0"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="n15">
+				<name>
+					<text>Send approval letter</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="Send approval letter" localNodeID="0dc7092a-8913-49e7-b9bc-3e5237565a54"/>
+				<graphics>
+					<position x="312.5" y="123.0"/>
+					<dimension x="25.0" y="20.0"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="n16">
+				<name>
+					<text>Send rejection letter</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="Send rejection letter" localNodeID="b05a9da5-1d3a-47bd-a03b-79295902b76c"/>
+				<graphics>
+					<position x="312.5" y="88.0"/>
+					<dimension x="25.0" y="20.0"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<arc id="arc17" source="n16" target="n6">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="7240cbd9-8a3a-4d86-9130-6212efd1b827"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc18" source="n9" target="n8">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="5e56cf92-2917-494a-86ae-af44accf421e"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc19" source="n13" target="n6">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="c46aaf08-4332-4f0e-8b86-24fce5fd766a"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc20" source="n16" target="n3">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="acab2a07-3808-4efd-a573-d64e5f50a262"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc21" source="n6" target="n9">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="3a53945f-019e-4535-8ba4-7edbcfd65922"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc22" source="n2" target="n16">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="0eb07413-fc69-43f2-8590-dfd4b1aa6645"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc23" source="n12" target="n1">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="b63c28d5-7a33-4ab7-b6de-2d412d1bc1c2"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc24" source="n4" target="n11">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="0faf190b-4c44-452e-be5e-e75992fc2ba8"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc25" source="n4" target="n10">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="42a613f4-cfe9-425f-a6ac-cf8990d3f9f1"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc26" source="n10" target="n5">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="5831c22b-0c33-4701-b9e1-34659f480631"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc27" source="n7" target="n14">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="f057fcc5-3636-4b1f-96a5-c1dc5f3270f2"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc28" source="n5" target="n12">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="7a53e42b-3a20-4087-925d-8c17bd3e9422"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc29" source="n14" target="n4">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="04b001ef-9188-4a8a-a31a-404224d3c389"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc30" source="n12" target="n2">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="4edbafbd-a2e4-40ef-a449-4d66d179e067"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc31" source="n15" target="n3">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="5c99fc6c-be7e-4beb-8a1d-3d2f78af1a55"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc32" source="n3" target="n9">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="56b8a844-3a0f-4e76-8359-cab2378a836f"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc33" source="n11" target="n5">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="82264607-29b4-479e-9d03-20706599f0b5"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc34" source="n1" target="n16">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="c5c29c28-9902-452d-af04-aa8f1dfea662"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc35" source="n2" target="n13">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="3c44e935-3325-4a6c-8809-7614632e4456"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="arc36" source="n1" target="n15">
+				<name>
+					<text>1</text>
+				</name>
+				<toolspecific tool="ProM" version="6.4" localNodeID="d4aaf45c-1cb3-40e6-b583-e128e3a62e21"/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+		</page>
+		<finalmarkings/>
+	</net>
+</pnml>

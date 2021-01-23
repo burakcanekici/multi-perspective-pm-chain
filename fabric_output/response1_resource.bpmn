@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?><definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+							xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.omg.org/bpmn20" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"><collaboration id="colRef" name=""><participant id="part" name="Pool" processRef="processRef"/></collaboration><process id="processRef" name=""><laneSet id="laneSetRef" name=""><lane id="lanenode_ROLE1" name="Claire,Fred,Gus,Howard,Joe,John,Lilly,Mona,Sue,Vincent"><flowNodeRef>n15</flowNodeRef><flowNodeRef>n6</flowNodeRef><flowNodeRef>n9_pg</flowNodeRef><flowNodeRef>n10</flowNodeRef><flowNodeRef>n12</flowNodeRef><flowNodeRef>n7</flowNodeRef><flowNodeRef>n9</flowNodeRef><flowNodeRef>n4</flowNodeRef><flowNodeRef>n14</flowNodeRef><flowNodeRef>n8</flowNodeRef><flowNodeRef>n2</flowNodeRef><flowNodeRef>n3</flowNodeRef><flowNodeRef>n1</flowNodeRef><flowNodeRef>n16</flowNodeRef><flowNodeRef>n11</flowNodeRef></lane><lane id="lanenode_ROLE2" name="Karsten,Ruby"><flowNodeRef>n13</flowNodeRef></lane></laneSet><startEvent id="n7" name="START EVENT"/><endEvent id="n8" name="END EVENT"/><task id="n9" name="Archive claim"/><task id="n10" name="Check all"><ioSpecification id="ios_n10" name=""><dataInput id="di_n10_1" name=""/></ioSpecification><dataInputAssociation id="dia_n10_1" name=""><sourceRef>dor_PolicyType</sourceRef><targetRef>di_n10_1</targetRef></dataInputAssociation></task><task id="n11" name="Check policy only"><ioSpecification id="ios_n11" name=""><dataInput id="di_n11_1" name=""/></ioSpecification><dataInputAssociation id="dia_n11_1" name=""><sourceRef>dor_PolicyType</sourceRef><targetRef>di_n11_1</targetRef></dataInputAssociation></task><task id="n12" name="Evaluate claim"><ioSpecification id="ios_n12" name=""><dataOutput id="do_n12_1" name=""/></ioSpecification><dataOutputAssociation id="doa_n12_1" name=""><sourceRef>do_n12_1</sourceRef><targetRef>dor_Status</targetRef></dataOutputAssociation></task><task id="n13" name="Issue payment"><ioSpecification id="ios_n13" name=""><dataInput id="di_n13_1" name=""/></ioSpecification><dataInputAssociation id="dia_n13_1" name=""><sourceRef>dor_Status</sourceRef><targetRef>di_n13_1</targetRef></dataInputAssociation></task><task id="n14" name="Register Claim"><ioSpecification id="ios_n14" name=""><dataOutput id="do_n14_1" name=""/></ioSpecification><dataOutputAssociation id="doa_n14_1" name=""><sourceRef>do_n14_1</sourceRef><targetRef>dor_PolicyType</targetRef></dataOutputAssociation></task><task id="n15" name="Send approval letter"><ioSpecification id="ios_n15" name=""><dataInput id="di_n15_1" name=""/></ioSpecification><dataInputAssociation id="dia_n15_1" name=""><sourceRef>dor_Status</sourceRef><targetRef>di_n15_1</targetRef></dataInputAssociation></task><task id="n16" name="Send rejection letter"><ioSpecification id="ios_n16" name=""><dataInput id="di_n16_1" name=""/></ioSpecification><dataInputAssociation id="dia_n16_1" name=""><sourceRef>dor_Status</sourceRef><targetRef>di_n16_1</targetRef></dataInputAssociation></task><exclusiveGateway id="n1" name="Exclusive Gateway" gatewayDirection="Diverging"><incoming>sf_n12_n1</incoming><outgoing>sf_n1_n16_pg</outgoing><outgoing>sf_n1_n15</outgoing></exclusiveGateway><exclusiveGateway id="n2" name="Exclusive Gateway" gatewayDirection="Diverging"><incoming>sf_n12_n2</incoming><outgoing>sf_n2_n16_pg</outgoing><outgoing>sf_n2_n13</outgoing></exclusiveGateway><exclusiveGateway id="n3" name="Exclusive Gateway" gatewayDirection="Converging"><incoming>sf_n16_n3</incoming><incoming>sf_n15_n3</incoming><outgoing>sf_n3_n9_pg</outgoing></exclusiveGateway><exclusiveGateway id="n4" name="Exclusive Gateway" gatewayDirection="Diverging"><incoming>sf_n14_n4</incoming><outgoing>sf_n4_n11</outgoing><outgoing>sf_n4_n10</outgoing></exclusiveGateway><exclusiveGateway id="n6" name="Exclusive Gateway" gatewayDirection="Converging"><incoming>sf_n16_n6</incoming><incoming>sf_n13_n6</incoming><outgoing>sf_n6_n9_pg</outgoing></exclusiveGateway><parallelGateway id="n9_pg" name="Parallel Gateway" gatewayDirection="Converging"><incoming>sf_n6_n9_pg</incoming><incoming>sf_n3_n9_pg</incoming><outgoing>sf_n9_pg_n9</outgoing></parallelGateway><parallelGateway id="n16_pg" name="Parallel Gateway" gatewayDirection=""><incoming>sf_n2_n16_pg</incoming><incoming>sf_n1_n16_pg</incoming><outgoing>sf_n16_pg_n16</outgoing></parallelGateway><sequenceFlow id="sf_n12_n1" name="" sourceRef="n12" targetRef="n1"/><sequenceFlow id="sf_n12_n2" name="" sourceRef="n12" targetRef="n2"/><sequenceFlow id="sf_n16_n3" name="" sourceRef="n16" targetRef="n3"/><sequenceFlow id="sf_n15_n3" name="" sourceRef="n15" targetRef="n3"/><sequenceFlow id="sf_n14_n4" name="" sourceRef="n14" targetRef="n4"/><sequenceFlow id="sf_n16_n6" name="" sourceRef="n16" targetRef="n6"/><sequenceFlow id="sf_n13_n6" name="" sourceRef="n13" targetRef="n6"/><sequenceFlow id="sf_n7_n14" name="" sourceRef="n7" targetRef="n14"/><sequenceFlow id="sf_n9_n8" name="" sourceRef="n9" targetRef="n8"/><sequenceFlow id="sf_n6_n9_pg" name="" sourceRef="n6" targetRef="n9_pg"/><sequenceFlow id="sf_n3_n9_pg" name="" sourceRef="n3" targetRef="n9_pg"/><sequenceFlow id="sf_n9_pg_n9" name="" sourceRef="n9_pg" targetRef="n9"/><sequenceFlow id="sf_n4_n10" name="(PolicyType==&quot;normal&quot;)" sourceRef="n4" targetRef="n10"/><sequenceFlow id="sf_n4_n11" name="(PolicyType==&quot;premium&quot;)" sourceRef="n4" targetRef="n11"/><sequenceFlow id="sf_n10_n12" name="" sourceRef="n10" targetRef="n12"/><sequenceFlow id="sf_n11_n12" name="" sourceRef="n11" targetRef="n12"/><sequenceFlow id="sf_n2_n13" name="(Status==&quot;approved&quot;)" sourceRef="n2" targetRef="n13"/><sequenceFlow id="sf_n1_n15" name="(Status==&quot;approved&quot;)" sourceRef="n1" targetRef="n15"/><sequenceFlow id="sf_n2_n16_pg" name="" sourceRef="n2" targetRef="n16_pg"/><sequenceFlow id="sf_n1_n16_pg" name="" sourceRef="n1" targetRef="n16_pg"/><sequenceFlow id="sf_n16_pg_n16" name="(Status==&quot;rejected&quot;)" sourceRef="n16_pg" targetRef="n16"/><dataObject id="dataobj_Status" name="Status"/><dataObject id="dataobj_PolicyType" name="PolicyType"/><dataObjectReference id="dor_Status" name="Status" dataObjectRef="dataobj_Status"/><dataObjectReference id="dor_PolicyType" name="PolicyType" dataObjectRef="dataobj_PolicyType"/></process><bpmndi:BPMNDiagram id="id_diagram"><bpmndi:BPMNPlane bpmnElement="colRef"><bpmndi:BPMNShape bpmnElement="n7">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n8">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n1">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n2">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n3">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n4">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n6">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n9_pg">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n16_pg">
+					<dc:Bounds x="0.0" y="0.0" width="25.0" height="25.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="dor_Status">
+					<dc:Bounds x="0.0" y="0.0" width="40.0" height="60.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="dor_PolicyType">
+					<dc:Bounds x="0.0" y="0.0" width="40.0" height="60.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n9">
+					<dc:Bounds x="0.0" y="0.0" width="80.0" height="40.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n10">
+					<dc:Bounds x="0.0" y="0.0" width="80.0" height="40.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n11">
+					<dc:Bounds x="0.0" y="0.0" width="80.0" height="40.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n12">
+					<dc:Bounds x="0.0" y="0.0" width="80.0" height="40.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n13">
+					<dc:Bounds x="0.0" y="0.0" width="80.0" height="40.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n14">
+					<dc:Bounds x="0.0" y="0.0" width="80.0" height="40.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n15">
+					<dc:Bounds x="0.0" y="0.0" width="80.0" height="40.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="n16">
+					<dc:Bounds x="0.0" y="0.0" width="80.0" height="40.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="part" isExpanded="true" isHorizontal="true">
+					<dc:Bounds x="0.0" y="0.0" width="280.0" height="180.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="lanenode_ROLE1" isExpanded="true" isHorizontal="true">
+					<dc:Bounds x="0.0" y="0.0" width="280.0" height="180.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement="lanenode_ROLE2" isExpanded="true" isHorizontal="true">
+					<dc:Bounds x="0.0" y="0.0" width="280.0" height="180.0"/>
+					<bpmndi:BPMNLabel/>
+				</bpmndi:BPMNShape><bpmndi:BPMNEdge bpmnElement="sf_n12_n1">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n12_n2">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n16_n3">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n15_n3">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n14_n4">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n16_n6">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n13_n6">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n7_n14">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n9_n8">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n6_n9_pg">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n3_n9_pg">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n9_pg_n9">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n4_n10">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n4_n11">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n10_n12">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n11_n12">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n2_n13">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n1_n15">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n2_n16_pg">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n1_n16_pg">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="sf_n16_pg_n16">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="dia_n10_1">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="dia_n11_1">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="dia_n13_1">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="dia_n15_1">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="dia_n16_1">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="doa_n12_1">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement="doa_n14_1">
+					<di:waypoint x="0.0" y="0.0"/>
+					<di:waypoint x="0.0" y="15.0"/>
+				</bpmndi:BPMNEdge></bpmndi:BPMNPlane></bpmndi:BPMNDiagram></definitions>
