@@ -1,0 +1,69 @@
+version: "3.8"
+
+volumes:
+  shared_volume:
+    
+networks: 
+  restnet:
+
+services:
+  mp-fabricchain:
+    container_name: mp-fabricchain
+    image: burakcandocker/mp-fabricchain:1.1
+    privileged: true
+    entrypoint: /bin/bash
+    command: -c "/bin/bash clean-up.sh && nohup dockerd"
+    ports:
+      - 7050:7050
+      - 7051:7051
+      - 7054:7054
+      - 9051:9051
+    networks: 
+      - restnet
+    volumes:
+      - "shared_volume:/pm-network"
+    
+  mp-postgres:
+    container_name: mp-postgres
+    image: burakcandocker/mp-postgres:1.0
+    privileged: true 
+    ports:
+      - 5432:5432
+    networks: 
+      - restnet
+      
+  mp-apiserver:
+    container_name: mp-apiserver
+    image: burakcandocker/mp-apiserver:1.2
+    privileged: true
+    entrypoint: /bin/bash
+    command: -c "/bin/bash ip-conf.sh && node server.js"
+    environment:
+      COMMONDIR: 'sharedrest'
+      FABRICHOST: 'mp-fabricchain'
+      PGHOST: 'mp-postgres'
+      PGDATABASE: 'postgres'
+      PGUSER: 'postgres'
+      PGPASSWORD: 'postgres'
+    ports:
+      - 0146:8080
+    networks: 
+      - restnet
+    depends_on:
+      - mp-fabricchain
+      - mp-postgres
+    volumes:
+      - "shared_volume:/sharedrest"
+
+  mp-frontend:
+    container_name: mp-frontend
+    image: burakcandocker/mp-frontend:1.0
+    privileged: true 
+    ports:
+      - 80:80
+    networks: 
+      - restnet
+    depends_on:
+      - mp-fabricchain
+      - mp-postgres
+      - mp-apiserver
