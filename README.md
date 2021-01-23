@@ -4,6 +4,7 @@
 * İndirmeyi yaptığınız dizinden terminal açın ve "docker-compose up" komutunu çalıştırın.
 * Burada Dockerhub a yüklediğim image dosyalarını çekecek burası uzun sürebilir (yaklaşık 12-13 GB).
 * İşlemin sonunda yukarıdaki gibi 3 adet container oluşması gerekiyor (yukarıdaki ekran Docker Desktop dan alındı, yüklediğiniz image ve container larınızı daha kolay görmeyi sağlıyor).
+![alt text](https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/01.PNG)
 * Ardından listede "mp-fabricchain" contanier ının üzerine gelirseniz hemen yanında 5 adet buton çıkacak buradan ikinci sıradaki CLI olana tıklayın.
 * Burada sırasıyla "sudo su", "cd pm-network", ve /bin/bash _scripts/network-up.sh" ile blockchain network ümüzü ayağa kaldırıyoruz.
 * Yukarıdaki gibi done mesajını aldıysak blockchain network ayakta demektir.
