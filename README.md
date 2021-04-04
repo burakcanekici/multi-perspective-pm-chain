@@ -5,9 +5,10 @@
 <p align="center">
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/docker-check.png"></kbd>
 </p>
-
-
+* Download the `docker-compose.yaml` in this repostory to any folder you want.
 * 
+
+
 1. Docker ve Docker Compose'un bilgisayarınızda yüklü olduğuna emin olun.
 2. Ek'te yer alan yaml dosyasını herhangi bir dizine indirin.
 3. İndirmeyi yaptığınız dizinden terminal açın ve "docker-compose up" komutunu çalıştırın.
