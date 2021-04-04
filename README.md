@@ -5,8 +5,8 @@
 <p align="center">
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/docker-check.png"></kbd>
 </p>
-* Download the `docker-compose.yaml` in this repostory to any folder you want.
-* Open cmd from where you download the `docker-compose.yaml` file and execute the following command;
+* Download the `docker-compose.yaml` to any folder you want.
+* Open cmd from where you download the `docker-compose.yaml` file into and execute the following command;
 ```
 docker-compose up
 ```
@@ -17,12 +17,6 @@ docker-compose up
 
 ## The Tool
 
-1. Docker ve Docker Compose'un bilgisayarınızda yüklü olduğuna emin olun.
-2. Ek'te yer alan yaml dosyasını herhangi bir dizine indirin.
-3. İndirmeyi yaptığınız dizinden terminal açın ve "docker-compose up" komutunu çalıştırın.
-4. Burada Dockerhub a yüklediğim image dosyalarını çekecek burası uzun sürebilir (yaklaşık 12-13 GB).
-5. İşlemin sonunda yukarıdaki gibi 3 adet container oluşması gerekiyor (yukarıdaki ekran Docker Desktop dan alındı, yüklediğiniz image ve container larınızı daha kolay görmeyi sağlıyor).
-![alt text](https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/01.PNG)
 6. Ardından listede "mp-fabricchain" contanier ının üzerine gelirseniz hemen yanında 5 adet buton çıkacak buradan ikinci sıradaki CLI olana tıklayın.
 7. Burada sırasıyla "sudo su", "cd pm-network", ve /bin/bash _scripts/network-up.sh" ile blockchain network ümüzü ayağa kaldırıyoruz.
 8. Yukarıdaki gibi done mesajını aldıysak blockchain network ayakta demektir.
