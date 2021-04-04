@@ -33,9 +33,14 @@ cd pm-network
 </p>
 
 ### Interact with the fabric network
-* If the network is brought up as the image above, we can interact with the fabric network via the API server developed and hosted by `mp-apiserver` container.
-> In here, `POST`, `GET`, and `PUT` methods are used for interaction.
-* I preferred `Postman` to send HTTP requests, but you can use whatever you want;
+* If the network is brought up as the image above, we can interact with the fabric network via the API server developed and hosted by `mp-apiserver` container. The API server is working on `http://localhost:0146/api/datamodel` path and `POST`, `GET`, and `PUT` methods are used for interaction.
+
+| Method | Description | Parameters |
+| --- | --- | --- |
+| `GET` | Used for downloading the Data Model in BPMN format | `model` -> model number |
+| `POST` | Used for recording the result of Control-Flow analysis to the fabric network | `model` -> model number <br/> `file` -> file (in **.pnml** format) |
+| `PUT` | Used for updating the Data Model kept in fabric network, with the result of Decision or Resource analysis | `model` -> model number <br/> `file` -> file (in **.pnml** format) <br/> `perspective` -> perspective identifier, either **D** or **R** |
+> I preferred `Postman` to send HTTP requests, but you can use whatever you want;
 
 
 10. İlk başta Control-flow perspektifi için POST methodunu kullanacağız, bunun için kullanacağımız URI "http://localhost:0146/api/datamodel" ve body sine koyacğımız parametreler aşağıdaki gibidir. Burada "file" parametresi Control-flow perspektifinin çıktısı olan pnml dosyasıdır, "model" parametresi de birden fazla model tutulabiliyor ilgili modelin id'si gibi değerlendirilebilir bunu istediğiniz sayıyı verebilirsiniz. Yani aynı event log için aynı model numarası üzerinden ilerleyin.
