@@ -60,7 +60,7 @@ cd pm-network
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/get.png"></kbd>
 </p>
 
-* On the other hand, the `mp-frontend` container hosts a frontend application that makes interaction with the API server without using `Postman` or this sort of applications. **This is not essential, but for optional.**
+* On the other hand, the `mp-frontend` container hosts a frontend application that makes interaction with the API server without using `Postman` or this sort of applications. You can navigate the following application page by typing `http://localhost` on the browser. **This is not essential, but for optional.**
 
 <p align="center">
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/frontend.png"></kbd>
