@@ -60,3 +60,20 @@ cd pm-network
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/get.png"></kbd>
 </p>
 
+* On the other hand, the `mp-frontend` container hosts a frontend application that makes interaction with the API server without using `Postman` or this sort of applications. **This is not essential, but for optional.**
+
+<p align="center">
+  <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/frontend.png"></kbd>
+</p>
+
+### Bring down the fabric network
+* Open CLI for `mp-fabricchain` container and execute the following commands to bring the blockchain network down;
+```
+sudu su
+cd pm-network
+/bin/bash _scripts/network-down.sh
+```
+
+<p align="center">
+  <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/network-down.png"></kbd>
+</p>
