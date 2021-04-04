@@ -1,12 +1,16 @@
 # multi-perspective-pm-chain
 
-### Installation
+## Installation
 * Make sure that `Docker` and `Docker Compose` have been installed in your computer. The following image show that how to check them;
 <p align="center">
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/docker-check.png"></kbd>
 </p>
 * Download the `docker-compose.yaml` in this repostory to any folder you want.
-* 
+* Open cmd from where you download the `docker-compose.yaml` file and execute the foloowing command;
+```
+docker-compose up
+```
+
 
 
 1. Docker ve Docker Compose'un bilgisayarınızda yüklü olduğuna emin olun.
