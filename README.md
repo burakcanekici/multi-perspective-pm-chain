@@ -2,15 +2,18 @@
 
 ## Installation
 * Make sure that `Docker` and `Docker Compose` have been installed in your computer. The following image show that how to check them;
+* 
 <p align="center">
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/docker-check.png"></kbd>
 </p>
+
 * Download the `docker-compose.yaml` to any folder you want.
 * Open cmd from where you download the `docker-compose.yaml` file into and execute the following command;
 ```
 docker-compose up
 ```
 * At the first time, the installation process could be long. If you see the containers in the Docker Desktop as in the following image, the tool has been installed correctly;
+
 <p align="center">
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/containers.png"></kbd>
 </p>
