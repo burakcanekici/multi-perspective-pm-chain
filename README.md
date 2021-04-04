@@ -42,6 +42,23 @@ cd pm-network
 | `PUT` | Used for updating the Data Model kept in fabric network, with the result of Decision or Resource analysis | `model` -> model number <br/> `file` -> file (in **.pnml** format) <br/> `perspective` -> perspective identifier, either **D** or **R** |
 > I preferred `Postman` to send HTTP requests, but you can use whatever you want;
 
+* In `POST` request, the `model` and `file` parameters should be filled properly as the following image. If the relevant method is executed successfully, `Transaction has been submitted` message is returned from server.
+
+<p align="center">
+  <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/post.png"></kbd>
+</p>
+
+* In `PUT` request, the `model` and `file` parameters should be filled properly as the following image. If the relevant method is executed successfully, `Transaction has been submitted` message is returned from server.
+
+<p align="center">
+  <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/put.png"></kbd>
+</p>
+
+* In `GET` request, the `model` and `file` parameters should be filled properly as the following image. If the relevant method is executed successfully, `Transaction has been submitted` message is returned from server.
+
+<p align="center">
+  <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/get.png"></kbd>
+</p>
 
 10. İlk başta Control-flow perspektifi için POST methodunu kullanacağız, bunun için kullanacağımız URI "http://localhost:0146/api/datamodel" ve body sine koyacğımız parametreler aşağıdaki gibidir. Burada "file" parametresi Control-flow perspektifinin çıktısı olan pnml dosyasıdır, "model" parametresi de birden fazla model tutulabiliyor ilgili modelin id'si gibi değerlendirilebilir bunu istediğiniz sayıyı verebilirsiniz. Yani aynı event log için aynı model numarası üzerinden ilerleyin.
 11. Ardından Data ve Resource perspektifleri için PUT methodunu kullanacağız, bunun için de aynı URI bilgisini kullanacağız. Burada Data perspektifi için pnml dosyası ve Resource perspektifi için OrgModel dosyaları "file" parametresine eklenecek, "model" parametresine güncellenmek istenen model numarası girilecek, ve "perspective" parametresine uygulanan perspektife göre "D" veya "R" girilecek.
