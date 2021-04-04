@@ -2,7 +2,9 @@
 
 ### Installation
 * Make sure that `Docker` and `Docker Compose` have been installed in your computer. The following image show that how to check them;
-![alt text](https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/docker-check.png)
+<p align="center">
+  <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/docker-check.png"></kbd>
+</p>
 
 
 * 
