@@ -2,7 +2,7 @@
 
 ## Installation
 * Make sure that `Docker` and `Docker Compose` have been installed in your computer. The following image show that how to check them;
-* 
+
 <p align="center">
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/docker-check.png"></kbd>
 </p>
@@ -19,6 +19,18 @@ docker-compose up
 </p>
 
 ## The Tool
+
+### Bring up the fabric network
+* Open CLI for `mp-fabricchain` container and execute the following commands to bring the blockchain network up;
+```
+sudu su
+cd pm-network
+/bin/bash _scripts/network-up.sh
+```
+
+<p align="center">
+  <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/network-up.png"></kbd>
+</p>
 
 6. Ardından listede "mp-fabricchain" contanier ının üzerine gelirseniz hemen yanında 5 adet buton çıkacak buradan ikinci sıradaki CLI olana tıklayın.
 7. Burada sırasıyla "sudo su", "cd pm-network", ve /bin/bash _scripts/network-up.sh" ile blockchain network ümüzü ayağa kaldırıyoruz.
