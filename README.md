@@ -12,7 +12,7 @@
 ```
 docker-compose up
 ```
-* At the first time, the installation process could be long. If you see the containers in the Docker Desktop as in the following image, the tool has been installed correctly;
+* At the first time, the installation process could be long. If you see the containers in the Docker Desktop as the following image, the tool has been installed correctly;
 
 <p align="center">
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/containers.png"></kbd>
@@ -32,10 +32,12 @@ cd pm-network
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/network-up.png"></kbd>
 </p>
 
-6. Ardından listede "mp-fabricchain" contanier ının üzerine gelirseniz hemen yanında 5 adet buton çıkacak buradan ikinci sıradaki CLI olana tıklayın.
-7. Burada sırasıyla "sudo su", "cd pm-network", ve /bin/bash _scripts/network-up.sh" ile blockchain network ümüzü ayağa kaldırıyoruz.
-8. Yukarıdaki gibi done mesajını aldıysak blockchain network ayakta demektir.
-9. Buradan sonra POST,GET, ve PUT request leri atacağız, bunun için ben Postman kullanıyorum.
+### Interact with the fabric network
+* If the network is brought up as the image above, we can interact with the fabric network via the API server developed and hosted by `mp-apiserver` container.
+> In here, `POST`, `GET`, and `PUT` methods are used for interaction.
+* I preferred `Postman` to send HTTP requests, but you can use whatever you want;
+
+
 10. İlk başta Control-flow perspektifi için POST methodunu kullanacağız, bunun için kullanacağımız URI "http://localhost:0146/api/datamodel" ve body sine koyacğımız parametreler aşağıdaki gibidir. Burada "file" parametresi Control-flow perspektifinin çıktısı olan pnml dosyasıdır, "model" parametresi de birden fazla model tutulabiliyor ilgili modelin id'si gibi değerlendirilebilir bunu istediğiniz sayıyı verebilirsiniz. Yani aynı event log için aynı model numarası üzerinden ilerleyin.
 11. Ardından Data ve Resource perspektifleri için PUT methodunu kullanacağız, bunun için de aynı URI bilgisini kullanacağız. Burada Data perspektifi için pnml dosyası ve Resource perspektifi için OrgModel dosyaları "file" parametresine eklenecek, "model" parametresine güncellenmek istenen model numarası girilecek, ve "perspective" parametresine uygulanan perspektife göre "D" veya "R" girilecek.
 12. Bu requestlerin sonucunda beklediğimiz mesaj aşağıdaki gibi olmalıdır.
