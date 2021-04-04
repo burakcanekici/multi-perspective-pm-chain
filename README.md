@@ -6,12 +6,16 @@
   <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/docker-check.png"></kbd>
 </p>
 * Download the `docker-compose.yaml` in this repostory to any folder you want.
-* Open cmd from where you download the `docker-compose.yaml` file and execute the foloowing command;
+* Open cmd from where you download the `docker-compose.yaml` file and execute the following command;
 ```
 docker-compose up
 ```
+* At the first time, the installation process could be long. If you see the containers in the Docker Desktop as in the following image, the tool has been installed correctly;
+<p align="center">
+  <kbd><img src="https://github.com/burakcanekici/multi-perspective-pm-chain/blob/main/image/containers.png"></kbd>
+</p>
 
-
+## The Tool
 
 1. Docker ve Docker Compose'un bilgisayarınızda yüklü olduğuna emin olun.
 2. Ek'te yer alan yaml dosyasını herhangi bir dizine indirin.
